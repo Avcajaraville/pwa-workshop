@@ -1,0 +1,18 @@
+{
+  "name": "workshop-pwa",
+  "version": "1.0.0",
+  "description": "Main repository for the Cognizant's PWA workshop",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Antonio Vázquez Cajaraville",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0"
+  }
+}
