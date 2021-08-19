@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/main.js",
+    "prettier": "npx prettier **/*.{css,js,html,json} --write"
   },
   "author": "Antonio Vázquez Cajaraville",
   "license": "ISC",
@@ -13,6 +15,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "eslint": "^7.32.0"
+    "eslint": "^7.32.0",
+    "prettier": "^2.3.2"
   }
 }
