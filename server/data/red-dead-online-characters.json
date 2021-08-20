@@ -1,5 +1,7 @@
 {
   "name": "Red Dead Online Characters",
+  "imageUrl": "images/alfredo-montez.jpg",
+  "imageAltText": "In game picture of Alfredo Montez",
   "characters": [
     "Alfredo Montez",
     "Allison O'Dowd",

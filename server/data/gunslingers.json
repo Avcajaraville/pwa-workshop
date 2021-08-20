@@ -1,5 +1,7 @@
 {
   "name": "Gunslingers",
+  "imageUrl": "images/black-belle.jpg",
+  "imageAltText": "In game picture of Black Belle",
   "characters": [
     "Black Belle",
     "Billy Midnight",

@@ -1,5 +1,7 @@
 {
   "name": "Bounty Targets",
+  "imageUrl": "images/bart-cavanaugh.jpg",
+  "imageAltText": "In game picture of Bart Cavanaugh",
   "characters": [
     "Bart Cavanaugh",
     "Benedict Allbright",

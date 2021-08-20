@@ -1,5 +1,7 @@
 {
   "name": "Mentioned/Deceased",
+  "imageUrl": "images/ansel-atherton.jpg",
+  "imageAltText": "In game picture of Ansel Atherton",
   "characters": [
     "Abel Atherton",
     "Agnes Guyon",

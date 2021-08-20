@@ -1,5 +1,7 @@
 {
   "name": "Van der Linde gang",
+  "imageUrl": "images/van-der-linde.jpg",
+  "imageAltText": "In game picture of Dutch Van der Linde",
   "characters": [
     "Arthur Morgan",
     "John Marston",

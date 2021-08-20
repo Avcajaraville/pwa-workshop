@@ -25,20 +25,23 @@ document.addEventListener('DOMContentLoaded', () => {
   function getCollectionMarkup(collection) {
     return `
       <h2>${collection.name}</h2>
-      <ul>
-        ${collection.characters
-          .map((character) => `<li><p>${character}</p></li>`)
-          .join('')}
-      </ul>
+      <div class="characters-grid">
+        <img class="image" src="${collection.imageUrl}" alt="${collection.imageAltText}">
+        <ul>
+          ${collection.characters
+            .map((character) => `<li><p>${character}</p></li>`)
+            .join('')}
+        </ul>
+      </div>
       `;
   }
 
   function renderCollection(element, markup) {
-    element.insertAdjacentHTML('afterend', markup);
+    element.parentElement.insertAdjacentHTML('afterend', markup);
   }
 
   function removeElement(element) {
     element.removeEventListener('click', clickHandler);
-    element.parentElement.removeChild(element);
+    element.parentElement.parentElement.removeChild(element.parentElement);
   }
 });

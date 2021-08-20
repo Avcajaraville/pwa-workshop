@@ -1,5 +1,7 @@
 {
   "name": "Debtors",
+  "imageUrl": "images/algie-davison.jpg",
+  "imageAltText": "In game picture of Algie Davison",
   "characters": [
     "Algie Davison",
     "Arthur Londonderry",

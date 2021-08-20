@@ -1,0 +1,73 @@
+:root {
+  --background-color: #000;
+  --font-color: #fff;
+  --color-1: #c00;
+  --color-outline: #fd0;
+  --spacer: 1rem;
+  --base-border-width: 2px;
+}
+
+@font-face {
+  font-family: Redemption;
+  src: url(../fonts/redemption.woff);
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  font-family: Redemption;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-1);
+}
+
+p {
+  margin: 0 0 var(--spacer) 0;
+}
+
+.button {
+  color: var(--font-color);
+  background-color: var(--color-1);
+  padding: 0.2rem 0.5rem;
+  margin: 0;
+  appearance: none;
+  border: var(--base-border-width) solid transparent;
+}
+
+.button:hover,
+.button:active,
+.button:active {
+  filter: brightness(150%);
+}
+
+.button:active,
+.button:focus {
+  outline: none;
+  border: var(--base-border-width) solid var(--color-outline);
+}
+
+.image {
+  max-width: 100%;
+}
+
+.characters-section {
+  padding: var(--spacer);
+}
+
+@media (min-width: 720px) {
+  .characters-grid {
+    display: grid;
+    grid-template-columns: 30rem 1fr;
+  }
+}

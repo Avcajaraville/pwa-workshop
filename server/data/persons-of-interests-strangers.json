@@ -1,5 +1,7 @@
 {
   "name": "Persons of Interests/Strangers",
+  "imageUrl": "images/albert-mason.jpg",
+  "imageAltText": "In game picture of Albert Mason",
   "characters": [
     "Acrisius",
     "Agnes Dowd",
