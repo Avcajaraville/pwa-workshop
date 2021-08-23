@@ -5,9 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint . --fix",
+    "prettier": "npx prettier **/*.{css,js,html,json} --write",
     "start": "node server/main.js",
-    "prettier": "npx prettier **/*.{css,js,html,json} --write"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Antonio Vázquez Cajaraville",
   "license": "ISC",
