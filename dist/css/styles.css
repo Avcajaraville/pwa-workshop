@@ -71,3 +71,7 @@ p {
     grid-template-columns: 30rem 1fr;
   }
 }
+
+.main-list__li {
+  margin-bottom: var(--spacer);
+}
