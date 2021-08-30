@@ -57,6 +57,10 @@ p {
   border: var(--base-border-width) solid var(--color-outline);
 }
 
+.button--notification {
+  margin-bottom: var(--spacer);
+}
+
 .image {
   max-width: 100%;
   width: 100%;

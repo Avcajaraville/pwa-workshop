@@ -26,7 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
     return `
       <h2>${collection.name}</h2>
       <div class="characters-grid">
-        <img class="image" src="${collection.imageUrl}" alt="${collection.imageAltText}">
+        <img class="image" src="${collection.imageUrl}" alt="${
+      collection.imageAltText
+    }">
         <ul>
           ${collection.characters
             .map((character) => `<li><p>${character}</p></li>`)

@@ -1,9 +1,10 @@
 const CACHE_NAME = 'app-cache';
 
 const urlsToCache = [
+  '/',
   '/css/styles.css',
   '/js/load-data.js',
-  '/js/main.js',
+  '/js/service-worker-controller.js',
   '/fonts/redemption.woff',
   '/images/fav/apple-touch-icon.png',
   '/images/fav/favicon-32x32.png',
@@ -21,6 +22,10 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  if (event.request.method === 'POST' || event.request.url.includes('/get-notification')) {
+    return;
+  }
+
   event.respondWith(
     caches.open(CACHE_NAME).then((cache) => {
       return cache
@@ -40,4 +45,12 @@ self.addEventListener('fetch', (event) => {
         });
     })
   );
+});
+
+self.addEventListener('push', (event) => {
+  const data = event.data.json();
+  self.registration.showNotification(data.title, {
+    body: 'Howdy pardner!',
+    icon: '/images/rdr2-logo.png',
+  });
 });
