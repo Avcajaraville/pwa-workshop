@@ -7,6 +7,7 @@
   "scripts": {
     "lint": "npx eslint . --fix",
     "prettier": "npx prettier **/*.{css,js,html,json} --write",
+    "postinstall": "node write-public-key.js",
     "start": "node server/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
