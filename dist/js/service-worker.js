@@ -51,6 +51,6 @@ self.addEventListener('push', (event) => {
   const data = event.data.json();
   self.registration.showNotification(data.title, {
     body: 'Howdy pardner!',
-    icon: '/images/rdr2-logo.png',
+    icon: '/images/fav/android-chrome-384x384.png',
   });
 });

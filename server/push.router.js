@@ -9,7 +9,7 @@ dotenv.config();
 const publicVapidKey = process.env.PUBLIC_VAPID_KEY;
 const privateVapidKey = process.env.PRIVATE_VAPID_KEY;
 
-webpush.setVapidDetails('https://pwa-app', publicVapidKey, privateVapidKey);
+webpush.setVapidDetails('https://cabesapp-pwa-workshop.herokuapp.com', publicVapidKey, privateVapidKey);
 
 const pushTokens = new Map();
 
@@ -30,7 +30,6 @@ router.post('/subscribe', (req, res) => {
 });
 
 router.get('/get-notification', (req, res, next) => {
-  console.log(pushTokens);
   for (let subscription of pushTokens.values()) {
     webpush.sendNotification(
       subscription,
