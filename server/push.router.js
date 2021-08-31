@@ -9,7 +9,11 @@ dotenv.config();
 const publicVapidKey = process.env.PUBLIC_VAPID_KEY;
 const privateVapidKey = process.env.PRIVATE_VAPID_KEY;
 
-webpush.setVapidDetails('https://cabesapp-pwa-workshop.herokuapp.com', publicVapidKey, privateVapidKey);
+webpush.setVapidDetails(
+  'https://cabesapp-pwa-workshop.herokuapp.com',
+  publicVapidKey,
+  privateVapidKey
+);
 
 const pushTokens = new Map();
 
