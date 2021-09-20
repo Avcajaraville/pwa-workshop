@@ -30,8 +30,10 @@ app.get('/', (req, res) => {
   res.sendFile(`${process.cwd()}/server/index.html`);
 });
 
-getAll().then(() => {
+(async () => {
+  await getAll();
+
   app.listen(port, () => {
     console.log(`PWA workshop app listening at http://localhost:${port}`);
   });
-});
+})();

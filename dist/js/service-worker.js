@@ -14,37 +14,30 @@ const urlsToCache = [
 ];
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      cache.addAll(urlsToCache);
-    })
-  );
+  event.waitUntil(async () => {
+    const cache = await caches.open(CACHE_NAME);
+    cache.addAll(urlsToCache);
+  });
 });
 
 self.addEventListener('fetch', (event) => {
-  if (event.request.method === 'POST' || event.request.url.includes('/get-notification')) {
+  if (
+    event.request.method === 'POST' ||
+    event.request.url.includes('/get-notification')
+  ) {
     return;
   }
 
-  event.respondWith(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache
-        .match(event.request)
-        .then((response) => {
-          if (!response) {
-            throw new Error(`${event.request} not found in cache`);
-          }
-
-          return response;
-        })
-        .catch(() => {
-          return fetch(event.request).then((response) => {
-            cache.put(event.request.url, response.clone());
-            return response;
-          });
-        });
-    })
-  );
+  event.respondWith((async () => {
+    const cache = await caches.open(CACHE_NAME);
+    const responseFromCaches = await cache.match(event.request);
+    if (responseFromCaches) {
+      return responseFromCaches;
+    }
+    const responseFromServer = await fetch(event.request);
+    await cache.put(event.request.url, responseFromServer.clone());
+    return responseFromServer;
+  })());
 });
 
 self.addEventListener('push', (event) => {

@@ -4,21 +4,18 @@ import fs from 'fs';
 let charactersRDR2 = null;
 
 export async function getAll() {
-  return fs.promises
-    .readdir(`${process.cwd()}/server/data`)
-    .then((files) => {
-      return Promise.all(
-        files.map((file) =>
-          fs.promises
-            .readFile(`${process.cwd()}/server/data/${file}`)
-            .then((data) => JSON.parse(data).characters)
-        )
-      );
-    })
-    .then((characters) => {
-      charactersRDR2 = characters.flat();
-      return charactersRDR2;
-    });
+  const files = await fs.promises.readdir(`${process.cwd()}/server/data`);
+  const characters = await Promise.all(
+    files
+      .filter((file) => file.endsWith('.json'))
+      .map(async (file) => {
+        const data = await fs.promises.readFile(
+          `${process.cwd()}/server/data/${file}`
+        );
+        return JSON.parse(data).characters;
+      })
+  );
+  charactersRDR2 = characters.flat();
 }
 
 export function getRandom() {
